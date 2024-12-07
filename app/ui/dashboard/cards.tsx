@@ -6,6 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
 
+import { LatestInvoice } from '@/app/lib/definitions';
 const iconMap = {
   collected: BanknotesIcon,
   customers: UserGroupIcon,
@@ -40,6 +41,9 @@ export function Card({
   type: 'invoices' | 'customers' | 'pending' | 'collected';
 }) {
   const Icon = iconMap[type];
+
+  const totalInvoices = allInvoices.length;
+  const totalCustomers = allCustomers.length;
 
   return (
     <div className="rounded-xl bg-gray-50 p-2 shadow-sm">
